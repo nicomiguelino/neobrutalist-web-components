@@ -2,12 +2,9 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-// The deploy workflow sets these for GitHub Pages project pages
-// (https://<owner>.github.io/<repo>/). Locally they are unset, so dev and preview serve from "/".
 const SITE_URL = process.env.SITE_URL || 'https://nicomiguelino.github.io';
 const BASE_PATH = process.env.BASE_PATH || undefined;
 
-// https://astro.build/config
 export default defineConfig({
 	site: SITE_URL,
 	base: BASE_PATH,
@@ -30,7 +27,6 @@ export default defineConfig({
 				{
 					label: 'Guides',
 					items: [
-						// Each item here is one entry in the navigation menu.
 						{ slug: 'guides/getting-started' },
 						{ slug: 'guides/typescript' },
 						{ slug: 'guides/theming' },

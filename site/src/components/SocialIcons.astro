@@ -1,13 +1,9 @@
 ---
-// Overrides Starlight's SocialIcons so the header links use Tabler brand icons,
-// like the astro-seasons theme. Social entries are read from the `social` option
-// in astro.config.mjs.
 import config from 'virtual:starlight/user-config'
 import tablerIcons from '@iconify-json/tabler/icons.json'
 
 const icons: Record<string, { body: string }> = tablerIcons.icons
 
-// Starlight icon names that don't match the Tabler `brand-<name>` convention.
 const iconAliases: Record<string, string> = { twitter: 'brand-x', 'x.com': 'brand-x' }
 
 function getIconBody(name: string): string | undefined {
@@ -36,7 +32,6 @@ const links = (config.social ?? []).map(({ label, href, icon }) => ({
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    /* Matches the search button and theme dropdown height. */
     box-sizing: border-box;
     width: 2.5rem;
     height: 2.5rem;

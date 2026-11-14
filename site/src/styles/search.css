@@ -1,4 +1,3 @@
-/* Search overlay: the dev-server notice and the Pagefind UI used in production builds. */
 html:root {
   site-search dialog {
     border: var(--nb-border-width) solid var(--nb-ink);
@@ -14,7 +13,6 @@ html:root {
     -webkit-backdrop-filter: blur(2px);
   }
 
-  /* Dev-server notice ("Search is only available in production builds"). */
   site-search .dialog-frame > div[style] {
     max-width: 28rem;
     padding: 1.5rem;
@@ -31,7 +29,6 @@ html:root {
     }
   }
 
-  /* Mobile-only cancel button. */
   site-search button[data-close-modal] {
     padding: 0.35rem 0.75rem;
     border: 2px solid #111111;
@@ -42,7 +39,6 @@ html:root {
     font-weight: 700;
   }
 
-  /* Pagefind UI (production builds). */
   #starlight__search {
     --pagefind-ui-primary: var(--nb-ink);
     --pagefind-ui-text: var(--nb-ink);
@@ -91,7 +87,6 @@ html:root {
       color: var(--nb-ink);
     }
 
-    /* Each result is a card; nested sections are divided rows inside it. */
     .pagefind-ui__result-inner {
       gap: 0;
       border: var(--nb-border-width) solid var(--nb-ink);

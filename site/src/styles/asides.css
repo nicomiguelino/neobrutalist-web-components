@@ -1,4 +1,3 @@
-/* :::note, :::tip, :::caution and :::danger callouts. */
 html:root {
   .starlight-aside {
     --sl-color-asides-text-accent: #111111;
@@ -8,7 +7,6 @@ html:root {
     box-shadow: 6px 6px 0 var(--nb-ink);
     color: var(--nb-on-color);
 
-    /* Neutral for note/tip, yellow for caution, pink for danger. */
     &.starlight-aside--note,
     &.starlight-aside--tip {
       background: var(--nb-cream);

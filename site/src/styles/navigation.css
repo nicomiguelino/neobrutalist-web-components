@@ -1,4 +1,3 @@
-/* Sidebar, table of contents, previous/next links and footer. */
 html:root {
   .sidebar-pane {
     border-inline-end: var(--nb-border-width) solid var(--nb-ink);

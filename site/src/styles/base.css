@@ -1,8 +1,3 @@
-/*
- * `html:root` raises specificity above Starlight's scoped component styles,
- * which would otherwise tie with a bare class selector. Every stylesheet in
- * this folder that targets Starlight components uses the same wrapper.
- */
 html:root {
   body {
     background-color: var(--nb-paper);

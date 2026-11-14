@@ -1,6 +1,4 @@
-/* Top bar: title, search button and mobile menu button. See theme-select.css for the dropdown. */
 html:root {
-  /* Starlight uses the `header` class on both the outer <header> and an inner <div>. */
   .header {
     background: var(--nb-color-primary);
     color: #111111;
@@ -29,7 +27,6 @@ html:root {
     color: #111111;
   }
 
-  /* Drop Starlight's vertical divider between the social icons and the theme dropdown. */
   .header .social-icons::after {
     display: none;
   }
@@ -55,7 +52,6 @@ html:root {
       box-shadow: none;
     }
 
-    /* Starlight nests a <kbd> per key inside an outer <kbd>; only the outer one gets the box. */
     > kbd {
       background: var(--nb-color-primary);
       border: 2px solid #111111;

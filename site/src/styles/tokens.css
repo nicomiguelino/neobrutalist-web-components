@@ -1,20 +1,11 @@
-/*
- * The --nb-* tokens mirror the ones the library ships (src/styles/tokens.ts),
- * so the docs look like the components they document. Starlight reads its own
- * --sl-* variables, which are mapped from the tokens below.
- */
-
 :root {
-  /* Same values as the library's defaults. */
   --nb-color-primary: #ffd43b;
   --nb-color-accent: #ff6b9d;
   --nb-border-width: 3px;
   --nb-shadow-offset: 4px;
 
-  /* Neutral fill for cards and asides; the palette is otherwise just yellow and pink. */
   --nb-cream: #fffdf5;
 
-  /* Text that sits on a colored fill; stays dark in both themes. */
   --nb-on-color: #111111;
 
   --nb-font-heading: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -27,12 +18,11 @@
   --sl-sidebar-width: 17rem;
 }
 
-/* Dark is Starlight's default; these also cover the "auto" theme. */
 :root,
 :root[data-theme='dark'] {
-  --nb-ink: #fffdf5; /* borders, shadows, headings */
-  --nb-paper: #141413; /* page background */
-  --nb-paper-2: #1f1f1d; /* raised surfaces */
+  --nb-ink: #fffdf5;
+  --nb-paper: #141413;
+  --nb-paper-2: #1f1f1d;
   --nb-muted: #b9b6a8;
   --nb-dot: rgb(255 253 245 / 0.07);
 

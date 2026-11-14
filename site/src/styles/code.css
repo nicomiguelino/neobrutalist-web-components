@@ -1,4 +1,3 @@
-/* Code blocks (Expressive Code). */
 html:root {
   .expressive-code {
     --ec-brdRad: 0px;
@@ -11,10 +10,6 @@ html:root {
       box-shadow: 6px 6px 0 var(--nb-ink);
     }
 
-    /*
-     * Terminal title bar: swap the monochrome three-dot mask for outlined,
-     * colored dots. The SVG is inlined so it isn't tied to the theme colors.
-     */
     --ec-frm-trmTtbBrdBtmCol: var(--nb-ink);
 
     .frame.is-terminal .header {
@@ -33,7 +28,6 @@ html:root {
       opacity: 1;
     }
 
-    /* The copy button is the only rounded thing left. */
     button {
       border-radius: 0;
     }

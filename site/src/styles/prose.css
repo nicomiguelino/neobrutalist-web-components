@@ -1,4 +1,3 @@
-/* Markdown content: links, quotes, rules, inline code and tables. */
 html:root {
   .sl-markdown-content a:not(:where(.not-content *)) {
     color: var(--nb-ink);

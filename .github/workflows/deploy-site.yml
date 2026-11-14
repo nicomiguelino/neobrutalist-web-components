@@ -7,15 +7,14 @@ on:
 
 permissions:
   contents: read
-  pages: write # publish to GitHub Pages
-  id-token: write # required by actions/deploy-pages
+  pages: write
+  id-token: write
 
 concurrency:
   group: pages
-  cancel-in-progress: false # let an in-flight deploy finish instead of cancelling it
+  cancel-in-progress: false
 
 env:
-  # Served from https://<owner>.github.io/<repo>/, so the site needs both values at build time.
   SITE_URL: https://${{ github.repository_owner }}.github.io
   BASE_PATH: /${{ github.event.repository.name }}
 
@@ -26,8 +25,6 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      # Installs dependencies (the package manager is detected from site/bun.lock),
-      # runs `astro build`, and uploads site/dist as the Pages artifact.
       - name: Install, build, and upload the site
         uses: withastro/action@v6
         with:
