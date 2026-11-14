@@ -5,7 +5,7 @@ export default defineConfig({
     lib: {
       entry: 'src/index.ts',
       name: 'NeobrutalistWebComponents',
-      fileName: (format) => `neobrutalist-web-components.${format}.js`
-    }
-  }
+      fileName: (format) => `neobrutalist-web-components.${format}.js`,
+    },
+  },
 })

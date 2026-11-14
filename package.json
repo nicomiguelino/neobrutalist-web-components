@@ -1,6 +1,6 @@
 {
   "name": "@nicomiguelino/neobrutalist-web-components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Neobrutalist web components (custom elements) for TypeScript and vanilla HTML/CSS/JS apps.",
   "type": "module",
   "license": "MIT",
@@ -22,10 +22,20 @@
     "dev": "vite",
     "build": "tsc && vite build && tsc -p tsconfig.build.json",
     "preview": "vite preview",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "check": "tsc --noEmit",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "eslint": "^10.15.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.10.1",
     "typescript": "~5.9.3",
+    "typescript-eslint": "^8.72.2",
     "vite": "^8.0.1"
   },
   "dependencies": {
@@ -38,5 +48,8 @@
   "homepage": "https://github.com/nicomiguelino/neobrutalist-web-components#readme",
   "bugs": {
     "url": "https://github.com/nicomiguelino/neobrutalist-web-components/issues"
+  },
+  "overrides": {
+    "minimatch": "^11.0.3"
   }
 }

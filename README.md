@@ -25,8 +25,8 @@ import { NbButton } from '@nicomiguelino/neobrutalist-web-components'
 const created = document.createElement('nb-button')
 const existing = document.querySelector('nb-button')
 
-created.variant = 'accent'  // OK: 'primary' | 'accent'
-created.variant = 'huge'    // Error: not assignable to 'primary' | 'accent'
+created.variant = 'accent' // OK: 'primary' | 'accent'
+created.variant = 'huge' // Error: not assignable to 'primary' | 'accent'
 created.disabled = true
 
 // Use the class for type annotations
@@ -74,10 +74,10 @@ Lit is bundled into both builds, so there is nothing else to load.
 
 ### Properties and attributes
 
-| Name       | Type                     | Default     | Notes                          |
-| ---------- | ------------------------ | ----------- | ------------------------------ |
-| `variant`  | `'primary' \| 'accent'`  | `'primary'` | Reflected to the attribute     |
-| `disabled` | `boolean`                | `false`     | Reflected to the attribute     |
+| Name       | Type                    | Default     | Notes                      |
+| ---------- | ----------------------- | ----------- | -------------------------- |
+| `variant`  | `'primary' \| 'accent'` | `'primary'` | Reflected to the attribute |
+| `disabled` | `boolean`               | `false`     | Reflected to the attribute |
 
 ```js
 const button = document.querySelector('nb-button')
