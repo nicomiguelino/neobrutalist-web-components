@@ -21,7 +21,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && tsc -p tsconfig.build.json",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "typescript": "~5.9.3",
@@ -29,5 +30,13 @@
   },
   "dependencies": {
     "lit": "^3.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicomiguelino/neobrutalist-web-components.git"
+  },
+  "homepage": "https://github.com/nicomiguelino/neobrutalist-web-components#readme",
+  "bugs": {
+    "url": "https://github.com/nicomiguelino/neobrutalist-web-components/issues"
   }
 }
