@@ -1,0 +1,38 @@
+html:root {
+  .starlight-aside {
+    --sl-color-asides-text-accent: #111111;
+    border: var(--nb-border-width) solid var(--nb-ink);
+    border-inline-start-width: var(--nb-border-width);
+    border-radius: 0;
+    box-shadow: 6px 6px 0 var(--nb-ink);
+    color: var(--nb-on-color);
+
+    &.starlight-aside--note,
+    &.starlight-aside--tip {
+      background: var(--nb-cream);
+    }
+    &.starlight-aside--caution {
+      background: var(--nb-color-primary);
+    }
+    &.starlight-aside--danger {
+      background: var(--nb-color-accent);
+    }
+
+    .starlight-aside__title {
+      font-family: var(--nb-font-heading);
+      font-weight: 800;
+      color: #111111;
+    }
+
+    .starlight-aside__content,
+    .starlight-aside__content a,
+    .starlight-aside__content code {
+      color: #111111;
+    }
+
+    .starlight-aside__content code {
+      background: rgb(255 255 255 / 0.55);
+      border-color: #111111;
+    }
+  }
+}

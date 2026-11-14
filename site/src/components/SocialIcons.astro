@@ -1,0 +1,75 @@
+---
+import config from 'virtual:starlight/user-config'
+import tablerIcons from '@iconify-json/tabler/icons.json'
+
+const icons: Record<string, { body: string }> = tablerIcons.icons
+
+const iconAliases: Record<string, string> = { twitter: 'brand-x', 'x.com': 'brand-x' }
+
+function getIconBody(name: string): string | undefined {
+  const iconName = iconAliases[name] ?? `brand-${name}`
+  return icons[iconName]?.body ?? icons['link']?.body
+}
+
+const links = (config.social ?? []).map(({ label, href, icon }) => ({
+  label,
+  href,
+  body: getIconBody(icon),
+}))
+---
+
+{
+  links.map(({ label, href, body }) => (
+    <a {href} rel="me noopener noreferrer" target="_blank" class="social-link">
+      <span class="sr-only">{label}</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" set:html={body} />
+    </a>
+  ))
+}
+
+<style>
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px solid #111111;
+    background: #fffdf5;
+    color: #111111;
+    box-shadow: 3px 3px 0 #111111;
+    transition:
+      transform 120ms ease,
+      box-shadow 120ms ease,
+      background-color 120ms ease;
+  }
+
+  .social-link:hover {
+    background: var(--nb-color-accent);
+    color: #111111;
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 0 #111111;
+  }
+
+  .social-link:active {
+    transform: translate(3px, 3px);
+    box-shadow: none;
+  }
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .social-link {
+      transition: none;
+    }
+  }
+</style>

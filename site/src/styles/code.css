@@ -1,0 +1,35 @@
+html:root {
+  .expressive-code {
+    --ec-brdRad: 0px;
+    --ec-brdWd: var(--nb-border-width);
+    --ec-brdCol: var(--nb-ink);
+    --ec-frm-edActTabIndTopCol: var(--nb-color-accent);
+    --ec-frm-edActTabIndBtmCol: var(--nb-color-accent);
+
+    .frame {
+      box-shadow: 6px 6px 0 var(--nb-ink);
+    }
+
+    --ec-frm-trmTtbBrdBtmCol: var(--nb-ink);
+
+    .frame.is-terminal .header {
+      min-height: 2.75rem;
+    }
+
+    .frame.is-terminal .header::before {
+      width: 4.4rem;
+      height: 1.2rem;
+      background-color: transparent;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 24'%3E%3Cg stroke='%23111' stroke-width='3'%3E%3Ccircle cx='12' cy='12' r='9' fill='%23ff6b9d'/%3E%3Ccircle cx='44' cy='12' r='9' fill='%23fffdf5'/%3E%3Ccircle cx='76' cy='12' r='9' fill='%23ffd43b'/%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      mask-image: none;
+      -webkit-mask-image: none;
+      opacity: 1;
+    }
+
+    button {
+      border-radius: 0;
+    }
+  }
+}

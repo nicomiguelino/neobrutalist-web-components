@@ -1,0 +1,40 @@
+html:root {
+  body {
+    background-color: var(--nb-paper);
+    background-image: radial-gradient(circle, var(--nb-dot) 1.5px, transparent 1.6px);
+    background-size: 16px 16px;
+  }
+
+  ::selection {
+    background: var(--nb-color-primary);
+    color: #111111;
+  }
+
+  :focus-visible {
+    outline: var(--nb-border-width) solid var(--nb-color-accent);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--nb-font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--nb-ink);
+  }
+
+  h1 {
+    font-weight: 800;
+    letter-spacing: -0.035em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:root * {
+    transition: none !important;
+  }
+}

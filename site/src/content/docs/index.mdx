@@ -1,0 +1,37 @@
+---
+title: Neobrutalist Web Components
+description: Chunky borders, hard shadows, zero dependencies on your framework.
+template: splash
+hero:
+  tagline: Custom elements with thick borders and hard shadows. Drop them into TypeScript or plain HTML.
+  actions:
+    - text: Get started
+      link: guides/getting-started/
+      icon: right-arrow
+    - text: View on GitHub
+      link: https://github.com/nicomiguelino/neobrutalist-web-components
+      icon: external
+      variant: secondary
+      attrs:
+        target: _blank
+        rel: noopener noreferrer
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Why these components
+
+<CardGrid>
+	<Card title="Works anywhere" icon="rocket">
+		Built with Lit as standard custom elements. Use them in a bundler, a module script, or a classic `<script>` tag.
+	</Card>
+	<Card title="Typed" icon="pencil">
+		Types ship with the package, and elements are registered in `HTMLElementTagNameMap`.
+	</Card>
+	<Card title="Themeable" icon="setting">
+		Colors, border width, and shadow offset are CSS custom properties that pass through shadow DOM.
+	</Card>
+	<Card title="Work in progress" icon="information">
+		The library is published, but it's still a work in progress. Components land one at a time. See the [`nb-button` reference](reference/nb-button/).
+	</Card>
+</CardGrid>
