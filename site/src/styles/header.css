@@ -1,0 +1,96 @@
+/* Top bar: title, search button and mobile menu button. See theme-select.css for the dropdown. */
+html:root {
+  /* Starlight uses the `header` class on both the outer <header> and an inner <div>. */
+  .header {
+    background: var(--nb-color-primary);
+    color: #111111;
+  }
+
+  header.header {
+    border-bottom: var(--nb-border-width) solid var(--nb-ink);
+  }
+
+  .content-panel + .content-panel {
+    border-top: var(--nb-border-width) solid var(--nb-ink);
+  }
+
+  .site-title,
+  .site-title span {
+    color: #111111;
+    font-family: var(--nb-font-heading);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  .header .social-icons a,
+  .header .social-icons a:hover,
+  .header select,
+  .header starlight-theme-select label {
+    color: #111111;
+  }
+
+  /* Drop Starlight's vertical divider between the social icons and the theme dropdown. */
+  .header .social-icons::after {
+    display: none;
+  }
+
+  site-search button[data-open-modal] {
+    background: #fffdf5;
+    border: 2px solid #111111;
+    border-radius: 0;
+    box-shadow: 3px 3px 0 #111111;
+    color: #111111;
+    transition:
+      transform 120ms ease,
+      box-shadow 120ms ease;
+
+    &:hover {
+      transform: translate(1px, 1px);
+      box-shadow: 2px 2px 0 #111111;
+      border-color: #111111;
+    }
+
+    &:active {
+      transform: translate(3px, 3px);
+      box-shadow: none;
+    }
+
+    /* Starlight nests a <kbd> per key inside an outer <kbd>; only the outer one gets the box. */
+    > kbd {
+      background: var(--nb-color-primary);
+      border: 2px solid #111111;
+      border-radius: 0;
+      color: #111111;
+      font-weight: 700;
+      padding-block: 0.1rem;
+
+      kbd {
+        background: none;
+        border: 0;
+        padding: 0;
+        color: inherit;
+      }
+    }
+  }
+
+  .sl-menu-button {
+    border: 2px solid #111111;
+    border-radius: 0;
+    background: #fffdf5;
+    box-shadow: 3px 3px 0 #111111;
+    color: #111111;
+    transition:
+      transform 120ms ease,
+      box-shadow 120ms ease;
+
+    &:hover {
+      transform: translate(1px, 1px);
+      box-shadow: 2px 2px 0 #111111;
+    }
+
+    &:active {
+      transform: translate(3px, 3px);
+      box-shadow: none;
+    }
+  }
+}

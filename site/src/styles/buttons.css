@@ -1,0 +1,54 @@
+/* Homepage hero and link buttons (match <nb-button>, with the press-in feel of astro-seasons). */
+html:root {
+  .hero h1 {
+    font-size: clamp(2.75rem, 8vw, 5rem);
+    line-height: 1;
+  }
+
+  .hero .tagline {
+    color: var(--nb-ink);
+    font-size: var(--sl-text-xl);
+  }
+
+  .sl-link-button {
+    border: var(--nb-border-width) solid var(--nb-ink);
+    border-radius: 0;
+    box-shadow: var(--nb-shadow-offset) var(--nb-shadow-offset) 0 var(--nb-ink);
+    font-family: var(--nb-font-heading);
+    font-weight: 700;
+    transition:
+      transform 120ms ease,
+      box-shadow 120ms ease;
+
+    &.primary {
+      background: var(--nb-color-primary);
+      color: #111111;
+    }
+
+    &.secondary {
+      background: var(--nb-color-accent);
+      color: #111111;
+    }
+
+    &.minimal {
+      background: var(--nb-paper-2);
+      color: var(--nb-ink);
+    }
+
+    &:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--nb-ink);
+      border-color: var(--nb-ink);
+      color: #111111;
+    }
+
+    &.minimal:hover {
+      color: var(--nb-ink);
+    }
+
+    &:active {
+      transform: translate(var(--nb-shadow-offset), var(--nb-shadow-offset));
+      box-shadow: none;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+/* <Card> / <CardGrid> from Starlight's components. */
+html:root {
+  .card {
+    --sl-card-border: var(--nb-ink);
+    --sl-card-bg: var(--nb-color-primary);
+    border: var(--nb-border-width) solid var(--nb-ink);
+    border-radius: 0;
+    background: var(--nb-color-primary);
+    box-shadow: 6px 6px 0 var(--nb-ink);
+    color: var(--nb-on-color);
+    transition:
+      transform 120ms,
+      box-shadow 120ms;
+
+    &:nth-child(4n + 1) {
+      --sl-card-bg: var(--nb-color-primary);
+      background: var(--nb-color-primary);
+    }
+    &:nth-child(4n + 2) {
+      background: var(--nb-color-accent);
+    }
+    /* Checkerboard in the two-column grid: yellow, pink / pink, yellow. */
+    &:nth-child(4n + 3) {
+      background: var(--nb-color-accent);
+    }
+    &:nth-child(4n + 4) {
+      background: var(--nb-color-primary);
+    }
+
+    &:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 3px 3px 0 var(--nb-ink);
+    }
+
+    .title,
+    .body,
+    .body a,
+    .body code {
+      color: var(--nb-on-color);
+    }
+
+    .title {
+      font-family: var(--nb-font-heading);
+      font-weight: 700;
+    }
+
+    /* Icon chip contrasts with its card: yellow on pink cards, pink on yellow cards. */
+    .icon {
+      border: 2px solid var(--nb-on-color);
+      border-radius: 0;
+      background-color: var(--nb-color-primary);
+      box-shadow: 2px 2px 0 var(--nb-on-color);
+      color: var(--nb-on-color);
+    }
+
+    &:nth-child(4n + 1) .icon,
+    &:nth-child(4n + 4) .icon {
+      background-color: var(--nb-color-accent);
+    }
+
+    .body code {
+      background: rgb(255 255 255 / 0.55);
+      border-color: #111111;
+    }
+  }
+}

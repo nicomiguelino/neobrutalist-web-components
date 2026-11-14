@@ -1,0 +1,56 @@
+/* Markdown content: links, quotes, rules, inline code and tables. */
+html:root {
+  .sl-markdown-content a:not(:where(.not-content *)) {
+    color: var(--nb-ink);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 80ms;
+  }
+
+  .sl-markdown-content a:hover:not(:where(.not-content *)) {
+    background: var(--nb-color-primary);
+    color: #111111;
+  }
+
+  .sl-markdown-content blockquote:not(:where(.not-content *)) {
+    border-inline-start: 6px solid var(--nb-color-accent);
+    background: var(--nb-paper-2);
+    padding: 0.75rem 1.25rem;
+    margin-inline: 0;
+  }
+
+  .sl-markdown-content hr:not(:where(.not-content *)) {
+    border: 0;
+    border-top: var(--nb-border-width) solid var(--nb-ink);
+  }
+
+  .sl-markdown-content :not(pre) > code:not(:where(.not-content *)) {
+    padding: 0.1em 0.4em;
+    border: 2px solid var(--nb-ink);
+    border-radius: 0;
+    background: var(--sl-color-bg-inline-code);
+    color: var(--nb-ink);
+    font-weight: 500;
+  }
+
+  .sl-markdown-content table:not(:where(.not-content *)) {
+    display: table;
+    width: 100%;
+    border: var(--nb-border-width) solid var(--nb-ink);
+    border-collapse: collapse;
+    box-shadow: 6px 6px 0 var(--nb-ink);
+    background: var(--nb-paper-2);
+  }
+
+  .sl-markdown-content :is(th, td):not(:where(.not-content *)) {
+    border: 2px solid var(--nb-ink);
+    padding: 0.6rem 0.9rem;
+  }
+
+  .sl-markdown-content th:not(:where(.not-content *)) {
+    background: var(--nb-color-primary);
+    color: #111111;
+    font-family: var(--nb-font-heading);
+    font-weight: 700;
+  }
+}

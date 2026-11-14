@@ -1,0 +1,104 @@
+/* The light/dark/auto dropdown in the header. */
+html:root {
+  /*
+   * The theme control stays a native dropdown. The icon is positioned over the
+   * <select>, so the label moves as a unit and the <select> carries the box.
+   */
+  .header starlight-theme-select label {
+    transition: transform 120ms ease;
+
+    &:hover {
+      transform: translate(1px, 1px);
+    }
+
+    &:active {
+      transform: translate(3px, 3px);
+    }
+
+    &:hover select {
+      box-shadow: 2px 2px 0 #111111;
+    }
+
+    &:active select {
+      box-shadow: none;
+    }
+  }
+
+  /* All header controls share one height (see also SocialIcons.astro and the search button). */
+  .header select {
+    box-sizing: border-box;
+    height: 2.5rem;
+    padding-block: 0;
+    align-items: center;
+    line-height: 1;
+    background-color: #fffdf5;
+    border: 2px solid #111111;
+    border-radius: 0;
+    box-shadow: 3px 3px 0 #111111;
+    font-family: var(--nb-font-heading);
+    font-weight: 700;
+    transition: box-shadow 120ms ease;
+  }
+
+  /*
+   * Styleable dropdown list. Chromium supports `appearance: base-select`;
+   * other browsers keep the native list, so this is progressive enhancement.
+   */
+  @supports (appearance: base-select) {
+    .header select,
+    .header select::picker(select) {
+      appearance: base-select;
+    }
+
+    /* Starlight already draws its own chevron. */
+    .header select::picker-icon {
+      display: none;
+    }
+
+    .header select::picker(select) {
+      margin-top: 8px;
+      padding: 0;
+      min-width: anchor-size(width);
+      border: 2px solid #111111;
+      border-radius: 0;
+      background: #fffdf5;
+      box-shadow: 4px 4px 0 var(--nb-ink);
+      color: #111111;
+    }
+
+    .header select option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.9rem;
+      border: 0;
+      border-bottom: 2px solid #111111;
+      background: #fffdf5;
+      color: #111111;
+      font-family: var(--nb-font-heading);
+      font-weight: 700;
+      cursor: pointer;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      &:hover,
+      &:focus-visible {
+        background: var(--nb-color-primary);
+        outline: none;
+      }
+
+      &:checked {
+        background: var(--nb-color-accent);
+      }
+
+      &::checkmark {
+        content: '✓';
+        font-weight: 800;
+        order: 2;
+        margin-inline-start: auto;
+      }
+    }
+  }
+}
