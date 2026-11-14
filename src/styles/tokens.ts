@@ -1,4 +1,4 @@
-import { css } from 'lit';
+import { css } from 'lit'
 
 /**
  * Design tokens shared by every component. They are CSS custom properties, so
@@ -16,4 +16,4 @@ export const tokens = css`
     --nb-shadow-offset: 4px;
     --nb-font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
   }
-`;
+`

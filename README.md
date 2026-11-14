@@ -11,7 +11,7 @@ Importing the library registers the custom elements. After that, use them like a
 ### With a bundler (Vite, webpack, etc.)
 
 ```js
-import '@nicomiguelino/neobrutalist-web-components';
+import '@nicomiguelino/neobrutalist-web-components'
 ```
 
 ### With TypeScript
@@ -19,24 +19,24 @@ import '@nicomiguelino/neobrutalist-web-components';
 Types ship with the package, so there is nothing extra to install. Importing the package registers the elements and adds `nb-button` to TypeScript's `HTMLElementTagNameMap`, which types the DOM APIs for you:
 
 ```ts
-import { NbButton } from '@nicomiguelino/neobrutalist-web-components';
+import { NbButton } from '@nicomiguelino/neobrutalist-web-components'
 
 // createElement and querySelector return NbButton, not HTMLElement
-const created = document.createElement('nb-button');
-const existing = document.querySelector('nb-button');
+const created = document.createElement('nb-button')
+const existing = document.querySelector('nb-button')
 
-created.variant = 'accent'; // OK: 'primary' | 'accent'
-created.variant = 'huge'; // Error: not assignable to 'primary' | 'accent'
-created.disabled = true;
+created.variant = 'accent' // OK: 'primary' | 'accent'
+created.variant = 'huge' // Error: not assignable to 'primary' | 'accent'
+created.disabled = true
 
 // Use the class for type annotations
 function lock(button: NbButton) {
-  button.disabled = true;
+  button.disabled = true
 }
 
 // Wait for the render when you need the inner <button>
-await created.updateComplete;
-created.shadowRoot?.querySelector('button');
+await created.updateComplete
+created.shadowRoot?.querySelector('button')
 ```
 
 If you only want the side effect of registering the elements, use `import '@nicomiguelino/neobrutalist-web-components'`. With `verbatimModuleSyntax` enabled, use `import type { NbButton } from ...` when you need the type alone.
@@ -47,7 +47,7 @@ Your `tsconfig.json` needs `"lib": ["DOM"]` and a `moduleResolution` that reads 
 
 ```html
 <script type="module">
-  import '@nicomiguelino/neobrutalist-web-components';
+  import '@nicomiguelino/neobrutalist-web-components'
 </script>
 
 <nb-button>Click me</nb-button>
@@ -66,7 +66,7 @@ The UMD build works in a plain `<script>` tag and even from `file://`. It regist
 <nb-button>Click me</nb-button>
 
 <script>
-  console.log(NeobrutalistWebComponents); // { NbButton, define }
+  console.log(NeobrutalistWebComponents) // { NbButton, define }
 </script>
 ```
 
@@ -80,9 +80,9 @@ Lit is bundled into both builds, so there is nothing else to load.
 | `disabled` | `boolean`               | `false`     | Reflected to the attribute |
 
 ```js
-const button = document.querySelector('nb-button');
-button.disabled = true;
-button.variant = 'accent';
+const button = document.querySelector('nb-button')
+button.disabled = true
+button.variant = 'accent'
 ```
 
 ## Theming

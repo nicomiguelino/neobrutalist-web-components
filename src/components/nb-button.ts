@@ -1,12 +1,12 @@
-import { LitElement, html, css } from 'lit';
-import { tokens } from '../styles/tokens.ts';
-import { define } from '../utils.ts';
+import { LitElement, html, css } from 'lit'
+import { tokens } from '../styles/tokens.ts'
+import { define } from '../utils.ts'
 
 export class NbButton extends LitElement {
   static properties = {
     variant: { reflect: true },
     disabled: { type: Boolean, reflect: true },
-  };
+  }
 
   static styles = [
     tokens,
@@ -49,27 +49,27 @@ export class NbButton extends LitElement {
         background: var(--nb-color-accent);
       }
     `,
-  ];
+  ]
 
   // `declare` keeps these type-only so they don't shadow Lit's generated accessors.
-  declare variant: 'primary' | 'accent';
-  declare disabled: boolean;
+  declare variant: 'primary' | 'accent'
+  declare disabled: boolean
 
   constructor() {
-    super();
-    this.variant = 'primary';
-    this.disabled = false;
+    super()
+    this.variant = 'primary'
+    this.disabled = false
   }
 
   render() {
-    return html`<button ?disabled=${this.disabled}><slot></slot></button>`;
+    return html`<button ?disabled=${this.disabled}><slot></slot></button>`
   }
 }
 
-define('nb-button', NbButton);
+define('nb-button', NbButton)
 
 declare global {
   interface HTMLElementTagNameMap {
-    'nb-button': NbButton;
+    'nb-button': NbButton
   }
 }
