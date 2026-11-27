@@ -15,15 +15,34 @@
         gap: 1rem;
         flex-wrap: wrap;
       }
+      nb-card {
+        margin-bottom: 1rem;
+      }
     </style>
   </head>
   <body>
     <h1>Playground</h1>
+
+    <h2>Buttons</h2>
+
     <section>
       <nb-button>Primary</nb-button>
       <nb-button variant="accent">Accent</nb-button>
       <nb-button disabled>Disabled</nb-button>
     </section>
+
+    <h2>Cards</h2>
+
+    <div>
+      <nb-card>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </nb-card>
+      <nb-card variant="accent">
+        <p>The quick brown fox jumps over the lazy dog.</p>
+        <p>She sells seashells by the seashore.</p>
+      </nb-card>
+    </div>
     <script type="module" src="/src/index.ts"></script>
   </body>
 </html>
